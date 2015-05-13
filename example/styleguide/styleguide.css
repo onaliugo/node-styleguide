@@ -3,9 +3,18 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
 
 
+.Styleguide-navWrapper ~ .Styleguide-navItem {
+	display: none;
+}
+
+body {
+	background: #fff;
+	font-family: 'Open Sans', 'Georgia', sans-serif;
+}
+
+
 /* Styleguide generals
- * Styleguide-title
- * Styleguide-wrapper */
+ * Styleguide-title */
 
 .Styleguide-title {
 	padding-bottom: .4em;
@@ -13,36 +22,10 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 	font-weight: 400;
 }
 
-.Styleguide-wrapper {
-	width: 50%;
-	max-width: 600px;
-	margin: 0 auto;
+.Styleguide-modulesContainer {
+	padding: 0 0 0 25%;
+	text-align: left;
 }
-
-
-
-/* Styleguide-navWrapper
- * Styleguide-navItem
- * Styleguide-navLink */
-
-.Styleguide-navWrapper {
-	margin: 0;
-	padding: 1em 0 0 0;
-}
-
-	.Styleguide-navItem {
-		display: inline-block;
-	}
-
-		.Styleguide-navLink {
-			display: block;
-			padding: .5em 1em;
-			font-size: 1.2em;
-			line-height: 1.5;
-			font-weight: lighter;
-			text-decoration: none;
-			color: #fff;
-		}
 
 
 
@@ -50,18 +33,27 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
  * Styleguide-headerTitle */
 
 .Styleguide-header {
-	font-family: Helvetica, Arial, sans-serif;
-	margin-bottom: 1em;
-	padding: 3.5em 0 2em 0;
-	text-align: center;
+	position: fixed;
+	top: 0; right: 0; left: 0;
+	font-family: 'Open Sans', 'Georgia', sans-serif;
+	padding: .8rem 3em;
+	text-align: left;
 	background-color: #009788;
+	z-index: 10;
 }
 
 	.Styleguide-headerTitle {
 		margin: 0; padding: 0;
-		font-weight: 300;
+		font-size: 1.2em;
+		text-transform: uppercase;
+		font-weight: 600;
 		color: #fff;
-		border-bottom: 0;
+	}
+
+	.Styleguide-headerDescription {
+		color: #fff;
+		margin: 0;
+		font-weight: 300;
 	}
 
 
@@ -70,38 +62,77 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 * Styleguide-moduleTitle */
 
 .Styleguide-module {
-	font-family: Helvetica, Arial, sans-serif;
-	padding-top: 2em;
-	padding-bottom: 2em;
-	text-align: center;
-	border-bottom: 1px solid #ccc;
+	padding: 8em 2em .8em 2em;
+	background-color: #fff;
+	border-radius: 3px;
 }
 
-	.Styleguide-module h1,
-	.Styleguide-module h2,
-	.Styleguide-module h3 {
+	.Styleguide-title--1,
+	.Styleguide-title--2,
+	.Styleguide-title--3,
+	.Styleguide-title--4 {
+		font-weight: 600;
+		color: #484848;
+		font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
+		outline: 0;
+	}
+
+
+	.Styleguide-title--1 {
+		margin: 0 0 1.6rem 0;
+    font-size: 2.4rem;
+		line-height: 3.2rem;
 		font-weight: 400;
 	}
 
-	.Styleguide-module h1 {
-		margin: 0 0 .8em 0;
-		font-size: 2em;
+	.Styleguide-title--2 {
+		margin-top: 2em;
+		margin-bottom: 1em;
+		font-size: 1.8em;
 	}
 
-	.Styleguide-module h2 {
-		margin-top: 1.5em;
+	.Styleguide-title--3 {
+		font-size: 1.5em;
+		margin-top: 2em;
+		font-weight: 400;
 	}
 
 	.Styleguide-module pre {
-		padding: 1em;
+		position: relative;
+		margin: 1.5em auto;
+		padding: 3.2rem 1em 1.6rem;
 		font-size: .9em;
 		line-height: 1.6;
 		text-align: left;
-		background-color: #eaeaea;
+		background-color: #fafafa;
 		border-radius: 2px;
+		border: 1px solid #ededed;
 	}
 
+	.Styleguide-module pre:before {
+		content: "code";
+		position: absolute;
+		top: 0; left: 0; right: 0;
+		display: block;
+		padding: .5em 1em;
+		font-family: 'Open Sans', 'Georgia', sans-serif;
+		font-size: .8em;
+		font-weight: 600;
+		text-transform: uppercase;
+		background-color: #ededed;
+		color: #fff;
+	}
 
+  .Styleguide-module--grid .Column {
+    background: #AED7E8;
+    text-align: center;
+    padding: 1rem 0;
+    border-right: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+  }
+  .Styleguide-module--grid .Column:last-child {
+    border-right: 0;
+  }
 
 /* Styleguide colors
  * Styleguide-module--colors
@@ -110,28 +141,87 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
  * Styleguide-colorItem
  * Styleguide-colorDescription */
 
-.Styleguide-colors {
-	margin: 0; padding: 0;
+.Styleguide-module--colors {
 }
 
 	.Styleguide-colorWrapper {
 		display: inline-block;
-		width: 8em;
-		margin: 0 .5em .5em 0;
+		width: 23.5%;
+		margin: 0 1% 1.6rem 0;
 		list-style-type: none;
 	}
 
 		.Styleguide-colorItem {
-			height: 6em;
-			border: 1px solid #aaa;
-			border-bottom: 0;
+			height: 6.4rem;
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
 		}
 
 		.Styleguide-colorDescription {
-			padding: .5em;
-			color: #555;
-			border: 1px solid #aaa;
-			border-top: 0;
+			font-size: 1em;
+			line-height: 1.6rem;
+			color: #999;
+			border-bottom: 1px solid #ededed;
+			padding: .8rem;
+			font-weight: 300;
 		}
+
+
+
+/* Styleguide-navWrapper
+ * Styleguide-navItem
+ * Styleguide-navLink */
+
+.Styleguide-navWrapper {
+	position: fixed;
+	top: 6.4rem;
+  bottom: 0;
+  left: 0;
+	overflow-y: scroll;
+	width: 25%;
+	margin: 0;
+	padding: 0 1em .8rem 2em;
+}
+
+	.Styleguide-navItem {
+		list-style-type: none;
+	}
+
+		.Styleguide-navLink {
+			display: block;
+			padding: 0 .8rem;
+			line-height: 1.6rem;
+			text-decoration: none;
+			border-radius: 5px;
+			color: #888;
+		}
+
+		.Styleguide-navLink:hover {
+			background-color: #eee;
+			color: #444;
+		}
+
+
+/* Styleguide credits
+ * Styleguide-credits
+ * Styleguide-creditsLink */
+
+.Styleguide-credits {
+  position: fixed;
+  bottom: .8rem;
+  left: 0;
+ 	width: 25%;
+	padding-left: 3.6em;
+  font-size: .8em;
+  line-height: 1.5em;
+  color: #888;
+}
+
+  .Styleguide-creditsLink {
+    line-height: 1;
+    color: #888;
+  }
+
+  .Styleguide-creditsLink:hover {
+    color: #444;
+  }
